@@ -1,4 +1,12 @@
 version: 2.1
+
+# Invoke jobs via workflows
+#https://circleci.com/developer/images
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  spark-test-workflow:
+    jobs:
+      - test
 jobs:
   test:
      docker:
@@ -8,11 +16,3 @@ jobs:
         - checkout
         - run: java --version
         - run: mvn clean install
-
-# Invoke jobs via workflows
-#https://circleci.com/developer/images
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  spark-test-workflow:
-    jobs:
-      - test
