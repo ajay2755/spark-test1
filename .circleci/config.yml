@@ -1,11 +1,11 @@
 version: 2.1
 jobs:
   test:
-   docker:
-      - image: cimg/openjdk:19.0.2
-    steps:
-      - checkout
-      - run: java --version
+     docker:
+        - image: cimg/openjdk:19.0.2
+      steps:
+        - checkout
+        - run: java --version
 
 # Invoke jobs via workflows
 #https://circleci.com/developer/images
