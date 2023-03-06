@@ -17,8 +17,9 @@ jobs:
       - checkout
       - run: java --version
       #- command : clean install
-      command: |
-            mvn clean
+      - run: 
+        command: |
+          mvn clean
         
 workflows:
   spark-test-workflow:
