@@ -8,11 +8,13 @@ jobs:
   test:
     docker:
       - image: cimg/openjdk:19.0.2
-      - image: cimg/maven:3.8.7
+      # - image: cimg/maven:3.8.7
+    orbs:
+      maven: circleci/maven@x.y
     steps:
       - checkout
       - run: java --version
-      - run: mvn clean install
+      - command : clean install
         
 workflows:
   spark-test-workflow:
