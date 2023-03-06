@@ -3,20 +3,14 @@ version: 2.1
 # Invoke jobs via workflows
 #https://circleci.com/developer/images
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-
-
   
 jobs:
   test:
-    #orbs:
-    #  maven: circleci/maven@1.3.0
     docker:
       - image: cimg/openjdk:19.0.2
-      # - image: cimg/maven:3.8.7
     steps:
       - checkout
       - run: java --version
-      #- command : clean install
       - run: mvn clean
         
 workflows:
