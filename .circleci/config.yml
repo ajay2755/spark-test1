@@ -12,4 +12,5 @@ jobs:
       - checkout
       - run: Write-Host 'Hello, Windows'
       - run: java --version
+      - run: mvn --version
       
